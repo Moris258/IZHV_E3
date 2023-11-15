@@ -100,6 +100,28 @@
                     "isPartOfComposite": false
                 },
                 {
+                    "name": "",
+                    "id": "f50fe411-8a3b-43d7-8cbd-9c017b053f05",
+                    "path": "<Gamepad>/rightTrigger",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
+                    "action": "Fire",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "4bb4a350-1adf-42d5-a3f5-f8b12c71605f",
+                    "path": "<Gamepad>/buttonSouth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
+                    "action": "Fire",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
                     "name": "Keyboard",
                     "id": "d9879bd3-08fc-4e28-97bd-5ee14ec38be3",
                     "path": "2DVector",
@@ -156,11 +178,33 @@
                 },
                 {
                     "name": "",
+                    "id": "668473b0-36a9-4434-95a2-dd0772805413",
+                    "path": "<Gamepad>/leftStick",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "73c0c27f-f796-424e-a561-f7a8a0074392",
                     "path": "<Mouse>/position",
                     "interactions": "",
                     "processors": "",
                     "groups": "M&K1",
+                    "action": "Look",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "975d6c19-8cca-4e0d-aea5-31ce21da9807",
+                    "path": "<Gamepad>/rightStick",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
                     "action": "Look",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -260,6 +304,17 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "M&K1",
+                    "action": "ToggleShotgun",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "b0f12bd6-017d-4d09-b6f3-f53e30c69fa6",
+                    "path": "<Gamepad>/buttonNorth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
                     "action": "ToggleShotgun",
                     "isComposite": false,
                     "isPartOfComposite": false

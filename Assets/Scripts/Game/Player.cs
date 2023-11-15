@@ -149,7 +149,7 @@ public class Player : MonoBehaviour
     private void Awake()
     {
         // Fetch the main camera if we did not receive any other.
-        if (mainCamera == null)
+        if (mainCamera == null && Settings.Instance != null)
         { mainCamera = Settings.Instance.mainCamera; }
         
         mRigidBody = GetComponent<Rigidbody>();
@@ -164,6 +164,10 @@ public class Player : MonoBehaviour
     /// </summary>
     void Start()
     {
+        //Get mainCamera if it wasn't already loaded.
+        if (mainCamera == null)
+            mainCamera = Settings.Instance.mainCamera;
+
         // Register this player or get its index.
         mPlayerIndex = Settings.Instance.AddPlayer(gameObject);
         

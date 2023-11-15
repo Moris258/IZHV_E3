@@ -32,7 +32,12 @@ public class Gun : MonoBehaviour
     /// Enable to switch the weapon to "shotgun mode".
     /// </summary>
     public bool shotgun = false;
-    
+
+    /// <summary>
+    /// Cooldown multiplier for shotgun mode.
+    /// </summary>
+    public float shotgunCooldown = 3.0f;
+
     /// <summary>
     /// Number of bullets in one shotgun spread.
     /// </summary>
@@ -142,6 +147,8 @@ public class Gun : MonoBehaviour
                 
                 // "Heat up" the gun.
                 mCoolDown += secondsPerBullet;
+                if (shotgun)
+                    mCoolDown *= shotgunCooldown;
             }
         }
     }
@@ -201,10 +208,24 @@ public class Gun : MonoBehaviour
          * Implement both single shot and shotgun (swap by pressing <SPACE> by default)
          */
         
-        SpawnBullet(
-            new Vector3{ x = 0.0f, y = 0.0f, z = 0.0f }, 
-            Quaternion.Euler(0.0f, 0.0f, 0.0f)
-        );
+        if(!shotgun)
+            SpawnBullet(
+                new Vector3{ x = director.position.x, y = director.position.y, z = director.position.z }, 
+                Quaternion.Euler(director.rotation.eulerAngles.x, director.rotation.eulerAngles.y, director.rotation.eulerAngles.z)
+            );
+        else
+        {
+            float startingSpread = shotgunSpread - shotgunSpread / shotgunBullets;
+            startingSpread = startingSpread / 2 - startingSpread;
+            float spreadStep = shotgunSpread / shotgunBullets;
+            for(int i = 0; i < shotgunBullets; i++)
+            {
+                SpawnBullet(
+                new Vector3 { x = director.position.x, y = director.position.y, z = director.position.z },
+                Quaternion.Euler(director.rotation.eulerAngles.x, director.rotation.eulerAngles.y, director.rotation.eulerAngles.z + startingSpread + spreadStep * i)
+            );
+            }
+        }
     }
 
     /// <summary>
